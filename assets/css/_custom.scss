@@ -1,5 +1,5 @@
 .heading--h1 {
-  @apply text-white text-[100px] font-headline uppercase;
+  @apply text-white text-[100px] md:text-[150px] font-headline uppercase;
 }
 
 .heading--h4 {
@@ -7,7 +7,7 @@
 }
 
 .container-home {
-  @apply w-full px-6 mx-auto flex flex-col items-center space-y-28;
+  @apply w-full px-6 mx-auto flex flex-col items-center space-y-28 md:space-y-52;
 }
 
 .explore-circle {
