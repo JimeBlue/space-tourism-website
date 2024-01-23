@@ -1,0 +1,15 @@
+.heading--h1 {
+  @apply text-white text-[100px] font-headline uppercase;
+}
+
+.heading--h4 {
+  @apply text-white text-xl font-headline uppercase;
+}
+
+.container-home {
+  @apply w-full px-6 mx-auto flex flex-col items-center space-y-28;
+}
+
+.explore-circle {
+  @apply flex items-center justify-center w-40 h-40 sm:w-64 sm:h-64 bg-white rounded-full;
+}

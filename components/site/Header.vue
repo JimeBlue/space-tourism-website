@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="bg-gray-800 text-white">
+    <nav class="bg-black text-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center">
           <!-- logo  -->

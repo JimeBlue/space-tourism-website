@@ -26,6 +26,13 @@ export default {
           'sans-serif',
         ],
       },
+      colors: {
+        primary: 'rgb(208, 214, 249)',
+        black: '#0B0D17',
+      },
+      screens: {
+        sm: '426px',
+      },
     },
   },
   plugins: [],
