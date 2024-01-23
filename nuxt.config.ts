@@ -3,6 +3,8 @@ import { resolve } from 'path'
 export default defineNuxtConfig({
   devtools: { enabled: true },
   alias: { '@': resolve(__dirname, '/') },
+  modules: ['@nuxt/image'],
+
   css: ['~/assets/css/index.scss'],
   postcss: {
     plugins: {
