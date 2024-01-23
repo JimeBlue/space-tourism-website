@@ -1,5 +1,5 @@
 <template>
   <div>
-    <p>Space Tourism Website</p>
+    <SiteHeader />
   </div>
 </template>
