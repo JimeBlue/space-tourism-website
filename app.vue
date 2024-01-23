@@ -1,5 +1,5 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <p>Space Tourism Website</p>
   </div>
 </template>
