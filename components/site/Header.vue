@@ -4,20 +4,15 @@
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center">
           <!-- logo  -->
-          <div class="flex space-x-4">
-            <a
-              href="#"
-              class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900"
-            >
-              <IconsLogo />
-            </a>
-          </div>
+
+          <nuxt-link to="/" class="flex items-center py-5 px-2 no-style">
+            <IconsLogo />
+          </nuxt-link>
+
           <!-- mobile menu button -->
-          <button
-            @click="isOpen = !isOpen"
-            class="p-4 focus:outline-none md:hidden"
-          >
-            <IconsHamburger />
+          <button @click="toggleNav()" class="p-4 focus:outline-none md:hidden">
+            <IconsHamburger v-if="!isOpen" />
+            <IconsClose v-if="isOpen" />
           </button>
 
           <!-- primary nav -->
@@ -51,6 +46,9 @@
 <script setup>
 // For mobile menu button
 const isOpen = ref(false)
+const toggleNav = () => {
+  isOpen.value = !isOpen.value
+}
 
 // Nav links
 const navigationEntries = [
