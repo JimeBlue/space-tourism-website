@@ -9,7 +9,24 @@ export default {
     './error.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        headline: [
+          'Bellefair',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+        sans: [
+          'Barlow Condensed',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+      },
+    },
   },
   plugins: [],
 }

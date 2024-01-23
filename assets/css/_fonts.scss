@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local(''),
+    url('~/assets/fonts/BarlowCondensed-Light.woff2') format('woff2'),
+    url('~/assets/fonts/BarlowCondensed-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(''),
+    url('~/assets/fonts/BarlowCondensed-Regular.woff2') format('woff2'),
+    url('~/assets/fonts/BarlowCondensed-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local(''),
+    url('~/assets/fonts/BarlowCondensed-Medium.woff2') format('woff2'),
+    url('~/assets/fonts/BarlowCondensed-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local(''),
+    url('~/assets/fonts/BarlowCondensed-Bold.woff2') format('woff2'),
+    url('~/assets/fonts/BarlowCondensed-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Bellefair';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(''),
+    url('~/assets/fonts/Bellefair-Regular.woff2') format('woff2'),
+    url('~/assets/fonts/Bellefair-Regular.woff') format('woff');
+}
