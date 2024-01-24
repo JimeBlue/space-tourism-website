@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <nav class="flex items-center justify-between">
+  <div class="bg-black">
+    <nav class="flex items-center justify-between py-4 w-11/12 mx-auto">
       <!-- logo -->
       <nuxt-link to="/">
         <IconsLogo />
@@ -10,9 +10,9 @@
         <button
           aria-label="open"
           @click="toggleNav()"
-          class="md:hidden focus:outline-none absolute top-4 right-5"
+          class="md:hidden focus:outline-none w-16 h-16 flex items-end justify-end absolute top-4 right-5"
         >
-          <IconsHamburger />
+          <IconsHamburger class="w-10 h-10" />
         </button>
 
         <transition name="slide">
@@ -23,19 +23,20 @@
             <div class="relative py-4 flex flex-col">
               <button
                 aria-label="close"
-                class="focus:outline-none z-20 absolute top-4 right-6"
+                class="focus:outline-none z-20 w-16 h-16 flex items-end justify-end absolute top-4 right-5"
                 @click="toggleNav()"
               >
-                <IconsClose />
+                <IconsClose class="w-10 h-10" />
               </button>
-              <ul>
+              <ul class="mt-28 px-12">
                 <NuxtLink
                   v-for="entry in navigationEntries"
                   :key="entry.label"
                   :to="entry.to"
-                  class="block py-2 px-4 text-sm text-white"
+                  class="flex space-x-2 py-2 text-base text-white"
                 >
-                  {{ entry.label }}
+                  <span class="font-bold">{{ entry.label_number }}</span
+                  ><span class="tracking-[2.75px]">{{ entry.label_text }}</span>
                 </NuxtLink>
               </ul>
             </div>
@@ -49,7 +50,7 @@
             v-for="entry in navigationEntries"
             :key="entry.label"
             :to="entry.to"
-            class="py-5 px-3"
+            class="py-5 px-3 text-white"
           >
             {{ entry.label }}
           </NuxtLink>
@@ -67,10 +68,10 @@ const toggleNav = () => {
 
 // Nav links
 const navigationEntries = [
-  { to: '/', label: '00 HOME' },
-  { to: '/destination', label: '01 DESTINATION' },
-  { to: '/crew', label: '02 CREW' },
-  { to: '/technology', label: '03 TECHNOLOGY' },
+  { to: '/', label_number: '00', label_text: 'HOME' },
+  { to: '/destination', label_number: '01', label_text: 'DESTINATION' },
+  { to: '/crew', label_number: '02', label_text: 'CREW' },
+  { to: '/technology', label_number: '03', label_text: 'TECHNOLOGY' },
 ]
 </script>
 <style scoped>
