@@ -18,7 +18,7 @@
         <transition name="slide">
           <nav
             v-if="navOpen"
-            class="md:hidden w-[80%] h-screen fixed top-0 right-0 bg-black z-50"
+            class="md:hidden w-[80%] h-screen fixed top-0 right-0 bg-opacity-10 bg-white backdrop-blur-lg z-50"
           >
             <div class="relative py-4 flex flex-col">
               <button
