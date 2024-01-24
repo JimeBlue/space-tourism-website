@@ -1,53 +1,68 @@
 <template>
   <div>
-    <nav class="bg-black text-white">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between items-center">
-          <!-- logo  -->
-
-          <nuxt-link to="/" class="flex items-center py-5 px-2 no-style">
-            <IconsLogo />
-          </nuxt-link>
-
-          <!-- mobile menu button -->
-          <button @click="toggleNav()" class="p-4 focus:outline-none md:hidden">
-            <IconsHamburger v-if="!isOpen" />
-            <IconsClose v-if="isOpen" />
-          </button>
-
-          <!-- primary nav -->
-          <div class="hidden md:flex items-center space-x-1 ml-auto">
-            <NuxtLink
-              v-for="entry in navigationEntries"
-              :key="entry.label"
-              :to="entry.to"
-              class="py-5 px-3"
-            >
-              {{ entry.label }}
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-
+    <nav class="flex items-center justify-between">
+      <!-- logo -->
+      <nuxt-link to="/">
+        <IconsLogo />
+      </nuxt-link>
       <!-- mobile menu -->
-      <div v-show="isOpen" class="mobile-menu md:hidden">
-        <NuxtLink
-          v-for="entry in navigationEntries"
-          :key="entry.label"
-          :to="entry.to"
-          class="block py-2 px-4 text-sm hover:bg-gray-700"
+      <div>
+        <button
+          aria-label="open"
+          @click="toggleNav()"
+          class="md:hidden focus:outline-none absolute top-4 right-5"
         >
-          {{ entry.label }}
-        </NuxtLink>
+          <IconsHamburger />
+        </button>
+
+        <transition name="slide">
+          <nav
+            v-if="navOpen"
+            class="md:hidden w-[80%] h-screen fixed top-0 right-0 bg-black z-50"
+          >
+            <div class="relative py-4 flex flex-col">
+              <button
+                aria-label="close"
+                class="focus:outline-none z-20 absolute top-4 right-6"
+                @click="toggleNav()"
+              >
+                <IconsClose />
+              </button>
+              <ul>
+                <NuxtLink
+                  v-for="entry in navigationEntries"
+                  :key="entry.label"
+                  :to="entry.to"
+                  class="block py-2 px-4 text-sm text-white"
+                >
+                  {{ entry.label }}
+                </NuxtLink>
+              </ul>
+            </div>
+          </nav>
+        </transition>
       </div>
+      <!-- desktop menu -->
+      <ul class="hidden md:flex">
+        <li>
+          <NuxtLink
+            v-for="entry in navigationEntries"
+            :key="entry.label"
+            :to="entry.to"
+            class="py-5 px-3"
+          >
+            {{ entry.label }}
+          </NuxtLink>
+        </li>
+      </ul>
     </nav>
   </div>
 </template>
 <script setup>
 // For mobile menu button
-const isOpen = ref(false)
+const navOpen = ref(false)
 const toggleNav = () => {
-  isOpen.value = !isOpen.value
+  navOpen.value = !navOpen.value
 }
 
 // Nav links
@@ -58,3 +73,30 @@ const navigationEntries = [
   { to: '/technology', label: '03 TECHNOLOGY' },
 ]
 </script>
+<style scoped>
+/* Slide in from right to left */
+.slide-enter-active {
+  animation: slide-in 0.3s ease-out forwards;
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide out from left to right */
+.slide-leave-active {
+  animation: slide-out 0.3s ease-in forwards;
+}
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+</style>
