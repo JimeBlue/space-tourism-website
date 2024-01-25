@@ -7,7 +7,7 @@
 }
 
 .container-home {
-  @apply w-full px-6 mx-auto flex flex-col items-center space-y-28 md:space-y-52;
+  @apply w-11/12 md:w-9/12 lg:w-4/5 mx-auto mt-16 sm:mt-24 md:mt-32 grid grid-cols-1 lg:grid-cols-2 gap-y-32 md:gap-y-48 lg:gap-y-0 lg:gap-x-32 xl:gap-x-0;
 }
 
 .explore-circle {
