@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-image bg-cover bg-no-repeat min-h-screen text-white py-10">
+  <!-- min-h-screen w-screen absolute top-0 left-0 -->
+  <div
+    class="bg-image bg-cover bg-no-repeat text-white py-10 min-h-screen w-screen absolute top-0 left-0"
+  >
     <section class="container-home">
       <section class="space-y-16 md:space-y-20 text-center md:mt-20">
         <h1
