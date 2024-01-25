@@ -1,8 +1,10 @@
 <template>
   <div class="bg-black">
-    <nav class="flex items-center justify-between py-4 w-11/12 mx-auto">
+    <nav
+      class="flex items-center md:items-start justify-between py-4 md:py-0 md:pl-6 w-11/12 md:w-full mx-auto"
+    >
       <!-- logo -->
-      <nuxt-link to="/">
+      <nuxt-link to="/" class="md:mt-4">
         <IconsLogo />
       </nuxt-link>
       <!-- mobile menu -->
@@ -44,15 +46,18 @@
         </transition>
       </div>
       <!-- desktop menu -->
-      <ul class="hidden md:flex">
+      <ul class="hidden md:flex bg-white/[0.07] py-6">
         <li>
           <NuxtLink
             v-for="entry in navigationEntries"
             :key="entry.label"
             :to="entry.to"
-            class="py-5 px-3 text-white"
+            class="nav-link px-6 text-white tracking-[2.75px]"
           >
-            {{ entry.label }}
+            <span class="hidden lg:inline font-bold">{{
+              entry.label_number
+            }}</span>
+            {{ entry.label_text }}
           </NuxtLink>
         </li>
       </ul>
@@ -75,7 +80,7 @@ const navigationEntries = [
 ]
 </script>
 <style scoped>
-/* Slide in from right to left */
+/* Slide in of mobile menu from right to left */
 .slide-enter-active {
   animation: slide-in 0.3s ease-out forwards;
 }
@@ -88,7 +93,7 @@ const navigationEntries = [
   }
 }
 
-/* Slide out from left to right */
+/* Slide out of mobile menu  from left to right */
 .slide-leave-active {
   animation: slide-out 0.3s ease-in forwards;
 }
@@ -99,5 +104,34 @@ const navigationEntries = [
   to {
     transform: translateX(100%);
   }
+}
+
+/* Desktop menu underline on hover*/
+.nav-link {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 24px; /* Adjust this value to change space between the text and the underline */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Position the line at the bottom of the padding */
+  left: 50%; /* Start at the middle */
+  width: 75%; /* Adjust width of the line */
+  height: 2px;
+  background-color: #979797;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Desktop menu underline when active*/
+.router-link-active {
+  @apply underline underline-offset-[27px] decoration-2;
 }
 </style>
