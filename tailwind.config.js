@@ -33,6 +33,9 @@ export default {
       screens: {
         sm: '426px',
       },
+      letterSpacing: {
+        widest: '4px',
+      },
     },
   },
   plugins: [],
