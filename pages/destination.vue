@@ -15,24 +15,10 @@
             <img
               :src="item.image"
               :alt="item.label"
-              v-show="index === selectedTabIndex"
+              v-if="index === selectedTabIndex"
             />
           </div>
-          <UTabs
-            :items="items"
-            :ui="{
-              list: {
-                base: 'relative lg:w-1/2 lg:ml-[50%]',
-                background: 'bg-gray-100 dark:bg-gray-800',
-                rounded: 'rounded-lg',
-                shadow: '',
-                padding: 'p-1',
-                height: 'h-10',
-                width: 'w-full',
-              },
-            }"
-            @change="onChange"
-          >
+          <UTabs :items="items" :ui="uiSettings" @change="onChange">
             <template #item="{ item }" class="border border-yellow-300">
               <div class="lg:flex">
                 <img
@@ -69,8 +55,21 @@ const items = planets.map((planet) => ({
 
 // Changes the planet image shown up to lg according to the tab that is selected
 const selectedTabIndex = ref(0)
-function onChange(index) {
+const onChange = (index) => {
   selectedTabIndex.value = index
+}
+
+// Sets classes for the tab's bar
+const uiSettings = {
+  list: {
+    base: 'relative lg:w-1/2 lg:ml-[50%]',
+    background: 'bg-gray-100 dark:bg-gray-800',
+    rounded: 'rounded-lg',
+    shadow: '',
+    padding: 'p-1',
+    height: 'h-10',
+    width: 'w-full',
+  },
 }
 </script>
 <style scoped>
