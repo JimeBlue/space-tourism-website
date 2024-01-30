@@ -25,6 +25,22 @@
             class="mt-6 max-w-md md:max-w-xl lg:max-w-none mx-auto lg:px-8"
           >
             <UTabs :items="items" :ui="uiSettings" @change="onChange">
+              <!-- Slot for tabs -->
+              <template #default="{ item, selected }">
+                <div>
+                  <span
+                    class="truncate tab-idle transition-all duration-300 ease-out delay-1000"
+                    :class="
+                      selected
+                        ? 'text-white underline hover:decoration-white underline-offset-8 decoration-[3px]'
+                        : 'text-indigo-200 hover:underline hover:decoration-gray-300 hover:underline-offset-8 hover:decoration-[3px]'
+                    "
+                  >
+                    {{ item.label }}</span
+                  >
+                </div>
+              </template>
+              <!-- Slot for Tabs content -->
               <template #item="{ item }" class="">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-x-20">
                   <img
@@ -111,15 +127,14 @@ const uiSettings = {
       shadow: 'shadow-sm',
     },
     tab: {
-      base: 'relative inline-flex items-center justify-center flex-shrink-0 w-full ui-focus-visible:outline-0 ui-focus-visible:ring-2 ui-focus-visible:ring-primary-500 dark:ui-focus-visible:ring-primary-400 ui-not-focus-visible:outline-none focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors duration-200 ease-out',
+      base: 'relative inline-flex items-center justify-center flex-shrink-0 w-full ui-focus-visible:outline-0 ui-focus-visible:ring-2 ui-focus-visible:ring-primary-500 dark:ui-focus-visible:ring-primary-400 ui-not-focus-visible:outline-none focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-all duration-300 ease-out delay-1000',
       background: '',
-      active:
-        'text-white tracking-widest underline underline-offset-4 decoration-20',
-      inactive: 'text-indigo-200 tracking-widest',
+      active: ' tracking-widest',
+      inactive: 'tracking-widest',
       height: 'h-8',
       padding: 'px-3',
       size: 'text-sm',
-      font: 'font-medium',
+      font: 'font-light',
       rounded: 'rounded-md',
       shadow: '',
     },

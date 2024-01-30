@@ -60,6 +60,7 @@ export default {
         sm: '426px',
       },
       letterSpacing: {
+        tab: '2.75',
         widest: '4px',
       },
       textDecorationThickness: {
