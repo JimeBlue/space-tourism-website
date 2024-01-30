@@ -62,6 +62,9 @@ export default {
       letterSpacing: {
         widest: '4px',
       },
+      textDecorationThickness: {
+        20: '30px',
+      },
     },
   },
   plugins: [],

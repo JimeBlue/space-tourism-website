@@ -31,10 +31,25 @@
                     class="hidden lg:block"
                   />
                   <article>
-                    <h2>{{ item.label }}</h2>
-                    <p>{{ item.content }}</p>
-                    <p>{{ item.distance }}</p>
-                    <p>{{ item.travelTime }}</p>
+                    <h2 class="heading--h3 text-center">{{ item.label }}</h2>
+                    <p
+                      class="text-indigo-200 font-light leading-7 tracking-wide text-center"
+                    >
+                      {{ item.content }}
+                    </p>
+                    <hr class="h-px my-8 bg-slate-700 border-0" />
+                    <ul class="space-y-6 text-center">
+                      <li class="space-y-2">
+                        <span class="subheading-2">{{
+                          item.distanceLabel
+                        }}</span>
+                        <p class="subheading-1">{{ item.distance }}</p>
+                      </li>
+                      <li class="space-y-2">
+                        <span class="subheading-2">{{ item.travelLabel }}</span>
+                        <p class="subheading-1">{{ item.travelTime }}</p>
+                      </li>
+                    </ul>
                   </article>
                 </div>
               </template>
@@ -54,7 +69,9 @@ const items = planets.map((planet) => ({
   index: planet.name,
   content: planet.description,
   travelTime: planet.travelTime,
+  travelLabel: planet.travelLabel,
   distance: planet.distance,
+  distanceLabel: planet.distanceLabel,
   image: planet.image,
 }))
 
@@ -67,6 +84,7 @@ const onChange = (index) => {
 // Sets classes for the tab's bar
 const uiSettings = {
   list: {
+    strategy: 'override',
     base: 'relative lg:w-1/2 lg:ml-[50%]',
     background: '',
     rounded: 'rounded-lg',
@@ -85,7 +103,8 @@ const uiSettings = {
     tab: {
       base: 'relative inline-flex items-center justify-center flex-shrink-0 w-full ui-focus-visible:outline-0 ui-focus-visible:ring-2 ui-focus-visible:ring-primary-500 dark:ui-focus-visible:ring-primary-400 ui-not-focus-visible:outline-none focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors duration-200 ease-out',
       background: '',
-      active: 'text-white tracking-widest underline decoration-8',
+      active:
+        'text-white tracking-widest underline underline-offset-4 decoration-20',
       inactive: 'text-indigo-200 tracking-widest',
       height: 'h-8',
       padding: 'px-3',
