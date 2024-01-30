@@ -1,10 +1,8 @@
 <template>
   <div class="bg-image bg-cover bg-no-repeat min-h-screen w-screen">
-    <div class="w-11/12 lg:w-full mx-auto max-w-[1250px] py-20">
-      <section class="text-white">
-        <p
-          class="flex justify-center md:justify-start space-x-2 uppercase tracking-widest"
-        >
+    <div class="w-11/12 lg:w-4/5 mx-auto max-w-[1250px] py-20">
+      <section class="text-white lg:mt-20">
+        <p class="flex justify-center md:justify-start space-x-2 heading--h5">
           <span class="opacity-70">01</span> <span>Pick your destination</span>
         </p>
 
@@ -19,42 +17,46 @@
               :src="item.image"
               :alt="item.label"
               v-if="index === selectedTabIndex"
-              class="h-[170px] w-[170px] md:h-[300px] md:w-[300px] mx-auto md:my-14"
+              class="h-[170px] w-[170px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] mx-auto md:my-14 lg:my-0"
             />
           </article>
           <!-- Tabs component from Nuxt UI -->
-          <article class="mt-6 max-w-md md:max-w-xl mx-auto">
+          <article
+            class="mt-6 max-w-md md:max-w-xl lg:max-w-none mx-auto lg:px-8"
+          >
             <UTabs :items="items" :ui="uiSettings" @change="onChange">
               <template #item="{ item }" class="">
-                <div class="lg:flex">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-x-20">
                   <img
                     :src="item.image"
                     :alt="item.label"
                     class="hidden lg:block"
                   />
-                  <article>
+                  <article class="">
                     <header class="md:my-10">
-                      <h2 class="heading--h3 text-center">
+                      <h2 class="heading--h2 text-center lg:text-left">
                         {{ item.label }}
                       </h2>
                       <p
-                        class="text-indigo-200 font-light leading-7 tracking-wide text-center"
+                        class="text-indigo-200 font-light leading-7 tracking-wide text-center lg:text-left"
                       >
                         {{ item.content }}
                       </p>
                     </header>
                     <hr class="h-px my-8 bg-slate-700 border-0" />
                     <ul
-                      class="space-y-6 md:space-y-0 text-center md:flex md:justify-center md:space-x-16"
+                      class="space-y-6 md:space-y-0 text-center lg:text-left md:flex md:justify-center lg:justify-start md:space-x-16 lg:space-x-6 xl:space-x-10 2xl:space-x-16"
                     >
                       <li class="space-y-2">
-                        <span class="subheading-2">{{
+                        <span class="subheading-2 heading-primary">{{
                           item.distanceLabel
                         }}</span>
                         <p class="subheading-1">{{ item.distance }}</p>
                       </li>
                       <li class="space-y-2">
-                        <span class="subheading-2">{{ item.travelLabel }}</span>
+                        <span class="subheading-2 heading-primary">{{
+                          item.travelLabel
+                        }}</span>
                         <p class="subheading-1">{{ item.travelTime }}</p>
                       </li>
                     </ul>

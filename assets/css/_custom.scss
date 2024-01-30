@@ -2,6 +2,10 @@
   @apply text-white text-[100px] md:text-[150px] font-headline uppercase;
 }
 
+.heading--h2 {
+  @apply text-[56px] md:text-[80px] lg:text-[100px] font-headline uppercase;
+}
+
 .heading--h3 {
   @apply text-white text-[56px] font-headline uppercase;
 }
@@ -9,13 +13,19 @@
 .heading--h4 {
   @apply text-white text-xl font-headline uppercase;
 }
+.heading--h5 {
+  @apply text-base md:text-xl lg:text-[28px] tracking-widest uppercase;
+}
 
+.heading-primary {
+  @apply text-indigo-200;
+}
 .subheading-1 {
-  @apply text-3xl uppercase text-white font-headline;
+  @apply text-3xl uppercase font-headline;
 }
 
 .subheading-2 {
-  @apply text-sm uppercase tracking-[2.35px] text-indigo-200 font-light;
+  @apply text-sm uppercase tracking-[2.35px] font-light;
 }
 
 .container-home {
