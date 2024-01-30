@@ -86,7 +86,7 @@ const uiSettings = {
       base: 'relative inline-flex items-center justify-center flex-shrink-0 w-full ui-focus-visible:outline-0 ui-focus-visible:ring-2 ui-focus-visible:ring-primary-500 dark:ui-focus-visible:ring-primary-400 ui-not-focus-visible:outline-none focus:outline-none disabled:cursor-not-allowed disabled:opacity-75 transition-colors duration-200 ease-out',
       background: '',
       active: 'text-white tracking-widest underline decoration-8',
-      inactive: 'text-white tracking-widest',
+      inactive: 'text-indigo-200 tracking-widest',
       height: 'h-8',
       padding: 'px-3',
       size: 'text-sm',
