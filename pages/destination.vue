@@ -2,7 +2,9 @@
   <div class="bg-image bg-cover bg-no-repeat min-h-screen w-screen">
     <div class="w-11/12 lg:w-full mx-auto max-w-[1250px] py-20">
       <section class="text-white">
-        <p class="flex justify-center space-x-2 uppercase tracking-widest">
+        <p
+          class="flex justify-center md:justify-start space-x-2 uppercase tracking-widest"
+        >
           <span class="opacity-70">01</span> <span>Pick your destination</span>
         </p>
 
@@ -17,11 +19,11 @@
               :src="item.image"
               :alt="item.label"
               v-if="index === selectedTabIndex"
-              class="h-[170px] w-[170px] mx-auto"
+              class="h-[170px] w-[170px] md:h-[300px] md:w-[300px] mx-auto md:my-14"
             />
           </article>
           <!-- Tabs component from Nuxt UI -->
-          <article class="mt-6">
+          <article class="mt-6 md:max-w-xl md:mx-auto">
             <UTabs :items="items" :ui="uiSettings" @change="onChange">
               <template #item="{ item }" class="">
                 <div class="lg:flex">
@@ -31,14 +33,20 @@
                     class="hidden lg:block"
                   />
                   <article>
-                    <h2 class="heading--h3 text-center">{{ item.label }}</h2>
-                    <p
-                      class="text-indigo-200 font-light leading-7 tracking-wide text-center"
-                    >
-                      {{ item.content }}
-                    </p>
+                    <header class="md:my-10">
+                      <h2 class="heading--h3 text-center">
+                        {{ item.label }}
+                      </h2>
+                      <p
+                        class="text-indigo-200 font-light leading-7 tracking-wide text-center"
+                      >
+                        {{ item.content }}
+                      </p>
+                    </header>
                     <hr class="h-px my-8 bg-slate-700 border-0" />
-                    <ul class="space-y-6 text-center">
+                    <ul
+                      class="space-y-6 md:space-y-0 text-center md:flex md:justify-center md:space-x-16"
+                    >
                       <li class="space-y-2">
                         <span class="subheading-2">{{
                           item.distanceLabel
@@ -121,7 +129,7 @@ const uiSettings = {
   background-image: url('images/background-destination-mobile.jpg');
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 700px) {
   .bg-image {
     background-image: url('images/background-destination-tablet.jpg');
   }
