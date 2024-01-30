@@ -23,7 +23,7 @@
             />
           </article>
           <!-- Tabs component from Nuxt UI -->
-          <article class="mt-6 md:max-w-xl md:mx-auto">
+          <article class="mt-6 max-w-md md:max-w-xl mx-auto">
             <UTabs :items="items" :ui="uiSettings" @change="onChange">
               <template #item="{ item }" class="">
                 <div class="lg:flex">
