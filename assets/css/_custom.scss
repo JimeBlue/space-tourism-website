@@ -35,3 +35,10 @@
 .explore-circle {
   @apply flex items-center justify-center w-40 h-40 sm:w-64 sm:h-64 bg-white rounded-full;
 }
+
+.container-destination {
+  @apply w-11/12 lg:w-4/5 mx-auto max-w-[1250px] py-20;
+}
+.container-crew {
+  @apply w-11/12 lg:w-4/5 mx-auto max-w-[1250px] py-20;
+}

@@ -1,10 +1,10 @@
 <template>
   <div class="bg-image bg-cover bg-no-repeat min-h-screen w-screen">
-    <div class="w-11/12 lg:w-4/5 mx-auto max-w-[1250px] py-20">
+    <div class="container-destination">
       <section class="text-white lg:mt-20">
-        <p class="flex justify-center md:justify-start space-x-2 heading--h5">
+        <h1 class="flex justify-center md:justify-start space-x-2 heading--h5">
           <span class="opacity-70">01</span> <span>Pick your destination</span>
-        </p>
+        </h1>
 
         <div class="mt-6">
           <!-- Planet images only shown up to screen size lg -->
