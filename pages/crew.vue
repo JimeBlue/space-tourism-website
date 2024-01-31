@@ -21,7 +21,7 @@
             />
           </article>
           <!-- Tabs component from Nuxt UI -->
-          <article>
+          <article class="max-w-md mx-auto">
             <UTabs :items="items" :ui="uiSettings" @change="onChange">
               <!-- Slot for tabs -->
               <template #default="{ item, selected }">
@@ -32,16 +32,22 @@
               </template>
               <!-- Slot for Tabs content -->
               <template #item="{ item }">
-                <div>
+                <div class="mt-8">
                   <img
                     :src="item.image"
                     :alt="item.label"
                     class="hidden lg:block"
                   />
-                  <article>
-                    <p>{{ item.position }}</p>
-                    <p>{{ item.name }}</p>
-                    <p>{{ item.content }}</p>
+                  <article class="text-center">
+                    <h2 class="heading--h4 tracking-wider text-white/40">
+                      {{ item.position }}
+                    </h2>
+                    <h3 class="heading--h3">{{ item.name }}</h3>
+                    <p
+                      class="text-base lg:text-xl text-indigo-200 font-light mt-2"
+                    >
+                      {{ item.content }}
+                    </p>
                   </article>
                 </div>
               </template>
