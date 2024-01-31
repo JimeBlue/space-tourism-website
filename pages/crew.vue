@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-image min-h-screen w-screen">
+  <div class="bg-black min-h-screen w-screen">
     <div class="container-crew">
       <section class="text-white">
         <h1 class="flex justify-center md:justify-start space-x-2 heading--h5">
@@ -16,12 +16,12 @@
               v-if="index === selectedTabIndex"
               :src="item.image"
               :alt="item.label"
-              class="h-[327px] w-[223px] mx-auto object-contain"
+              class="h-[327px] w-[223px] mx-auto object-cover"
               :class="{ 'slide-in-animation': index === selectedTabIndex }"
             />
           </article>
           <!-- Tabs component from Nuxt UI -->
-          <article class="max-w-md mx-auto">
+          <article class="max-w-md mx-auto mt-8">
             <UTabs :items="items" :ui="uiSettings" @change="onChange">
               <!-- Slot for tabs -->
               <template #default="{ item, selected }">
@@ -115,7 +115,7 @@ const uiSettings = {
 }
 </script>
 <style scoped>
-.bg-image {
+/* .bg-image {
   background: url('images/background-crew-mobile.jpg') no-repeat center center
     fixed;
   background-size: cover;
@@ -133,7 +133,7 @@ const uiSettings = {
     background-image: url('images/background-crew-desktop.jpg');
     background-size: cover;
   }
-}
+} */
 
 /* Animates crew memeber image in mobile */
 @keyframes slideInFromRight {
