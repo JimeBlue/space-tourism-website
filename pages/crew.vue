@@ -13,10 +13,11 @@
             class="lg:hidden"
           >
             <img
+              v-if="index === selectedTabIndex"
               :src="item.image"
               :alt="item.label"
               class="w-1/2 mx-auto"
-              v-if="index === selectedTabIndex"
+              :class="{ 'slide-in-animation': index === selectedTabIndex }"
             />
           </article>
           <!-- Tabs component from Nuxt UI -->
@@ -127,5 +128,21 @@ const uiSettings = {
     background-image: url('images/background-crew-desktop.jpg');
     background-size: cover;
   }
+}
+
+/* Animates crew memeber image in mobile */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-animation {
+  animation: slideInFromRight 0.5s ease-out forwards;
 }
 </style>
