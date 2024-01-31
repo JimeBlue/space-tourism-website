@@ -16,7 +16,7 @@
               v-if="index === selectedTabIndex"
               :src="item.image"
               :alt="item.label"
-              class="w-1/2 mx-auto"
+              class="h-[327px] w-[223px] mx-auto object-contain"
               :class="{ 'slide-in-animation': index === selectedTabIndex }"
             />
           </article>
@@ -54,7 +54,6 @@
 </template>
 <script setup>
 const { crew } = useCrew()
-const { planets } = usePlanet()
 
 // Data for the tabs showing each crew members
 const items = crew.map((member) => ({

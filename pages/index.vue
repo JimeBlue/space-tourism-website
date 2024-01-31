@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-image bg-cover bg-no-repeat text-white py-10 min-h-screen w-screen lg:flex lg:items-center"
+    class="bg-black bg-cover bg-no-repeat text-white py-10 min-h-screen w-screen lg:flex lg:items-center"
   >
     <section class="container-home">
       <section class="">
@@ -56,19 +56,19 @@
     </section> -->
 </template>
 <style scoped>
-.bg-image {
+/* .bg-image {
   background-image: url('images/background-home-mobile.jpg');
-}
+} */
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .bg-image {
     background-image: url('images/background-home-tablet.jpg');
   }
-}
+} */
 
-@media only screen and (min-width: 1024px) {
+/* @media only screen and (min-width: 1024px) {
   .bg-image {
     background-image: url('images/background-home-desktop.jpg');
   }
-}
+} */
 </style>
