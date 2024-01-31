@@ -11,7 +11,7 @@
           <article
             v-for="(item, index) in items"
             :key="item.label"
-            class="lg:hidden"
+            class="lg:hidden border"
           >
             <img
               :src="item.image"
