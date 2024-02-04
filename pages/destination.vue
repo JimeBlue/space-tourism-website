@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-image bg-cover bg-no-repeat min-h-screen w-screen">
+  <div class="bg-image bg-black bg-cover bg-no-repeat min-h-screen">
     <div class="container-destination">
       <section class="text-white lg:mt-20">
         <h1 class="flex justify-center md:justify-start space-x-2 heading--h5">
@@ -11,7 +11,7 @@
           <article
             v-for="(item, index) in items"
             :key="item.label"
-            class="lg:hidden border"
+            class="lg:hidden"
           >
             <img
               :src="item.image"
