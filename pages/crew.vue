@@ -1,48 +1,56 @@
 <template>
-  <div class="crew-background bg-black min-h-screen">
+  <div class="crew-background bg-black min-h-screen border border-transparent">
     <div class="container-crew">
-      <section class="text-white">
-        <h1 class="flex justify-center md:justify-start space-x-2 heading--h5">
+      <section class="text-white mt-24">
+        <h1
+          class="flex justify-center md:justify-start space-x-2 heading--h5 lg:mt-40"
+        >
           <span class="opacity-70">02</span> <span>Meet your crew</span>
         </h1>
-        <div class="mt-8">
-          <!-- Crew Member image shown only in mobile -->
-          <article
-            v-for="(item, index) in items"
-            :key="item.key"
-            class="md:hidden"
-          >
-            <img
-              v-if="index === selectedTabIndex"
-              :src="item.image"
-              :alt="item.label"
-              class="h-[327px] w-[223px] mx-auto object-contain"
-              :class="{ 'slide-in-animation': index === selectedTabIndex }"
-            />
-          </article>
-          <!-- Crew Member information shown only in tablet -->
-          <article
-            v-for="(item, index) in items"
-            :key="item.key"
-            class="hidden md:block lg:hidden mt-14"
-          >
+        <div
+          class="mt-8 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-x-8 xl:gap-x-24 lg:h-screen overflow-x-hidden"
+        >
+          <article class="lg:order-2 lg:self-end">
+            <!-- Crew Member image shown only in mobile and desktop-->
             <div
-              v-if="index === selectedTabIndex"
-              class="text-center w-1/2 mx-auto"
+              v-for="(item, index) in items"
+              :key="item.key"
+              class="md:hidden lg:inline-block"
             >
-              <h2 class="heading--h4 tracking-wider text-white/40 mb-2">
-                {{ item.position }}
-              </h2>
-              <h3 class="heading--h3">{{ item.name }}</h3>
-              <p
-                class="text-base lg:text-xl text-indigo-200 font-light text-center leading-7 mt-4"
+              <img
+                v-if="index === selectedTabIndex"
+                :src="item.image"
+                :alt="item.label"
+                class="h-[327px] w-[223px] lg:w-full lg:h-full object-contain lg:object-contain mx-auto lg:mx-0"
+                :class="{ 'slide-in-animation': index === selectedTabIndex }"
+              />
+            </div>
+            <!-- Crew Member information shown only in tablet -->
+            <div
+              v-for="(item, index) in items"
+              :key="item.key"
+              class="hidden md:block lg:hidden mt-14"
+            >
+              <div
+                v-if="index === selectedTabIndex"
+                class="text-center w-1/2 mx-auto"
               >
-                {{ item.content }}
-              </p>
+                <h2 class="heading--h4 tracking-wider text-white/40 mb-2">
+                  {{ item.position }}
+                </h2>
+                <h3 class="heading--h3">{{ item.name }}</h3>
+                <p
+                  class="text-base lg:text-xl text-indigo-200 font-light text-center leading-7 mt-4"
+                >
+                  {{ item.content }}
+                </p>
+              </div>
             </div>
           </article>
           <!-- Tabs component from Nuxt UI -->
-          <article class="max-w-md mx-auto mt-8">
+          <article
+            class="max-w-md lg:max-w-none mx-auto mt-8 lg:mt-0 lg:mb-24 lg:order-1 lg:flex lg:flex-col lg:justify-end"
+          >
             <UTabs :items="items" :ui="uiSettings" @change="onChange">
               <!-- Slot for tabs -->
               <template #default="{ item, selected }">
@@ -53,25 +61,27 @@
               </template>
               <!-- Slot for Tabs content -->
               <template #item="{ item, selected }">
-                <div class="mt-8">
+                <div class="mt-8 lg:mt-0 lg:mb-24">
                   <img
                     :src="item.image"
                     :alt="item.label"
-                    class="hidden md:block w-[456px] h-[572px] object-contain"
+                    class="hidden md:block lg:hidden w-[456px] h-[572px] object-contain"
                     :class="{
                       'slide-in-animation': selected,
                     }"
                   />
 
-                  <article class="text-center md:hidden lg:block">
-                    <h2 class="heading--h4 tracking-wider text-white/40 mb-1">
+                  <article class="text-center lg:text-left md:hidden lg:block">
+                    <h2
+                      class="heading--h4 tracking-wider text-white/40 mb-1 lg:mb-6"
+                    >
                       {{ item.position }}
                     </h2>
-                    <h3 class="heading--h3 lg:text-pink-400">
+                    <h3 class="heading--h3 lg:mt-0 lg:mb-8">
                       {{ item.name }}
                     </h3>
                     <p
-                      class="text-base lg:text-xl text-indigo-200 font-light mt-2"
+                      class="text-base lg:text-xl text-indigo-200 font-light mt-2 lg:mt-0"
                     >
                       {{ item.content }}
                     </p>
@@ -107,11 +117,11 @@ const onChange = (index) => {
 // Sets classes for the tab's bar
 const uiSettings = {
   strategy: 'override',
-  wrapper: 'relative space-y-2',
+  wrapper: 'relative space-y-2 lg:flex lg:flex-col',
   container: 'relative w-full',
   base: 'focus:outline-none',
   list: {
-    base: 'relative md:inset-x-28 lg:inset-x-0',
+    base: 'relative md:inset-x-28 lg:inset-x-0 lg:order-last lg:-ml-5',
     background: 'bg-transparent',
     rounded: 'rounded-lg',
     shadow: '',
@@ -183,18 +193,21 @@ const uiSettings = {
 } */
 
 /* Animates crew memeber image in mobile */
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
-.slide-in-animation {
-  animation: slideInFromRight 0.5s ease-out forwards;
+@media (max-width: 1024px) {
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .slide-in-animation {
+    animation: slideInFromRight 0.5s ease-out forwards;
+  }
 }
 </style>

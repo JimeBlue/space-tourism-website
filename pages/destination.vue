@@ -41,7 +41,7 @@
                 </div>
               </template>
               <!-- Slot for Tabs content -->
-              <template #item="{ item }" class="">
+              <template #item="{ item }">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-x-20">
                   <img
                     :src="item.image"

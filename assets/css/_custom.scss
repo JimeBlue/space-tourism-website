@@ -7,7 +7,7 @@
 }
 
 .heading--h3 {
-  @apply text-white text-2xl md:text-4xl lg:text-[56px] font-headline uppercase;
+  @apply text-white text-2xl md:text-4xl lg:text-5xl xl:text-[56px] font-headline uppercase;
 }
 
 .heading--h4 {
@@ -40,5 +40,5 @@
   @apply w-11/12 lg:w-4/5 mx-auto max-w-[1250px] py-20;
 }
 .container-crew {
-  @apply w-11/12 lg:w-4/5 mx-auto max-w-[1250px] py-20;
+  @apply w-11/12 lg:w-11/12 xl:w-4/5 mx-auto max-w-[1250px] py-20 lg:py-0;
 }
